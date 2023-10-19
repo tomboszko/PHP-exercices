@@ -128,24 +128,24 @@
         )
     );
 
-    // Get the form inputs
+    
     $childName = $_GET['ChildName'];
     $gender = $_GET['gender'];
     $teacherName = $_GET['TeacherName'];
     $date = $_GET['date'];
     $reason = $_GET['reason'];
 
-    // Select a random apology for the chosen reason
+    
     $selectedApology = $excuses[$reason][array_rand($excuses[$reason])];
 
-    // Generate the apology letter
+    // struggles with this part
     $apologyLetter = "Dear $teacherName,\n\n";
     $apologyLetter .= "I am writing to inform you that my $gender, $childName, will not be able to attend school on $date.\n\n";
     $apologyLetter .= "The reason for their absence is: $reason.\n\n";
     $apologyLetter .= "Apology: $selectedApology\n\n";
     $apologyLetter .= "Sincerely,\nParent";
 
-    // Display the apology letter
+    // struggles with this part
     echo "<h2>Generated Excuse</h2>";
     echo nl2br($apologyLetter);
     ?>
