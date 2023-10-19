@@ -76,14 +76,14 @@ Tip: you can combine multiple conditions (using AND / OR). -->
 
 <?php
 
-// 2. "Different greetings according to time" Exercise
+//2. "Different greetings according to time" Exercise
 
 // $Timezone = date_default_timezone_get();
 // $now =date('H:i:s') ;// How to get the current time in PHP ? Google is your friend ;-)
 
 // echo "<h1>$now</h1>";
 
-// Test the value of $now and display the right message according to the specifications.
+// //Test the value of $now and display the right message according to the specifications.
 
 
 // if($now >= '05:00:00' and $now <= '09:00:00'){
@@ -98,7 +98,7 @@ Tip: you can combine multiple conditions (using AND / OR). -->
 //     echo "Good night !";
 // }
 
-?>
+// ?>
 
 <!-- 3. Display a different greeting according to the user's age.
 Let's continue to make our robot a little more civil and greet humans properly, taking into account their age.
@@ -116,27 +116,294 @@ if age is between 18 and 115 years old, display Hello Adult !"
 if age is beyond 115 years old, display "Wow! Still alive ? Are you a robot, like me ? Can I hug you ?"
 Have both the form and the processing script in the same file. Use the GET method. -->
 
+  <?php
 
-// 3. "Different greetings according to age" Exercise
+// if (isset($_GET['age'])) {
+//     $age = $_GET['age'];
+//     if ($age < 12) {
+//         echo "Hello kiddo!";
+//     } elseif ($age >= 12 && $age <= 18) {
+//         echo "Hello Teenager !";
+//     } elseif ($age > 18 && $age <= 115) {
+//         echo "Hello Adult !";
+//     } else {
+//         echo "Wow! Still alive ? Are you a robot, like me ? Can I hug you ?";
+//     }
+// }
+?> 
 
-if (isset($_GET['age']){
-	// Form processing
+<!--<form method="get" action="">
+    <label for="age">Please type your age :</label>
+    <input type="number" name="age">
+    <input type="submit" name="submit" value="Greet me now">
+</form> -->
 
-}
-// Form (incomplete)
+<!-- 4. Display a different greeting according to the user's age and gender.
+Improve the previous form to add another question: "Man or Woman?". Use an input of type radio to capture the data.
+If gender is "Woman", the displayed message should be adapted accordingly.
+For example, if the user age is between 12 and 18 and the gender is female, display "Hello Miss Teen!" otherwise, display "Hello mister Teen!".
+Do the same for all the other age ranges.
+Tip: You can nest conditional structures inside others. -->
+
+
+<?php
+
+// if (isset($_GET['age']) && isset($_GET['gender'])) {
+
+//     $age = $_GET['age'];
+//     $gender = $_GET['gender'];
+
+//     if ($age < 12) {
+//         if ($gender == "Woman") {
+//             echo "Hello little girl!";
+//         } else {
+//             echo "Hello little boy!";
+//         }
+//     } elseif ($age >= 12 && $age <= 18) {
+//         if ($gender == "Woman") {
+//             echo "Hello Miss Teen!";
+//         } else {
+//             echo "Hello mister Teen!";
+//         }
+//     } elseif ($age > 18 && $age <= 115) {
+//         if ($gender == "Woman") {
+//             echo "Hello Madam!";
+//         } else {
+//             echo "Hello Sir!";
+//         }
+//     } else {
+//         echo "Wow! Still alive ? Are you a robot, like me ? Can I hug you ?";
+//     }
+// }
+// ?>
+
+<!--  <form method="get" action="">
+    <label for="age">Please type your age :</label>
+     <input type="number" name="age">
+     <br>
+    <label for="gender">Man or Woman?</label>
+     <input type="radio" name="gender" value="Man">Man
+     <input type="radio" name="gender" value="Woman">Woman
+     <br>
+     <input type="submit" name="submit" value="Greet me now">
+ </form> -->
+
+ <!-- 5. Display a different greeting according to the user's age, gender and mothertongue.
+Improve the previous form to add yet another question: "Do you speak English ? ". 
+Use an input of type radio to capture the data. Possible answers: "yes" or "no".
+Then modify your form processing script to implement this :
+
+If age is below 12 and the user replies "yes", display : "Hello boy!" or "Hello Girl!" according to the gender indicated.
+If the answer is "no", display "Aloha boy" or "Aloha Girl"
+Adapt all the other answers accordingly, using "Aloha" instead of "Hello". -->
+
+<?php
+
+// if (isset($_GET['age']) && isset($_GET['gender']) && isset($_GET['english'])) {
+
+//     $age = $_GET['age'];
+//     $gender = $_GET['gender'];
+//     $english = $_GET['english'];
+
+//     if ($age < 12) {
+
+//         if ($english == "yes") {
+
+//             if ($gender == "Woman") {
+//                 echo "Hello Girl!";
+//             } else {
+//                 echo "Hello boy!";
+//             }
+//         } else {
+//             if ($gender == "Woman") {
+//                 echo "Aloha Girl!";
+//             } else {
+//                 echo "Aloha boy!";
+//             }
+//         }
+//     } elseif ($age >= 12 && $age <= 18) {
+
+//         if ($english == "yes") {
+
+//             if ($gender == "Woman") {
+//                 echo "Hello Miss Teen!";
+//             } else {
+//                 echo "Hello mister Teen!";
+//             }
+//         } else {
+//             if ($gender == "Woman") {
+//                 echo "Aloha Miss Teen!";
+//             } else {
+//                 echo "Aloha mister Teen!";
+//             }
+//         }
+//     } elseif ($age > 18 && $age <= 115) {
+
+//         if ($english == "yes") {
+
+//             if ($gender == "Woman") {
+//                 echo "Hello Madam!";
+//             } else {
+//                 echo "Hello Sir!";
+//             }
+//         } else {
+//             if ($gender == "Woman") {
+//                 echo "Aloha Madam!";
+//             } else {
+//                 echo "Aloha Sir!";
+//             }
+//         }
+//     } else {
+//         echo "Wow! Still alive ? Are you a robot, like me ? Can I hug you ?";
+//     }
+// }
+// ?>
+
+ <!-- <form method="get" action="">
+     <label for="age">Please type your age :</label>
+    <input type="number" name="age">
+     <br>
+    <label for="gender">Man or Woman?</label>
+    <input type="radio" name="gender" value="Man">Man
+     <input type="radio" name="gender" value="Woman">Woman
+     <br>
+     <label for="english">Do you speak English?</label>
+    <input type="radio" name="english" value="yes">Yes
+     <input type="radio" name="english" value="no">No
+    <br>
+     <input type="submit" name="submit" value="Greet me now">
+ </form> -->
+
+
+ <!-- 6. The Girl Soccer team
+You want to create a soccer team for girls between 21 and 40 years old.
+
+Create a form asking for the age, gender and name of the person. 
+Use the $age and $gender variables in an if/else to display
+ a "welcome to the team !" or "Sorry you don't fit the criteria" message. -->
+
+
+<!-- <form method="get" action="">
+     <label for="age">Please type your age :</label>
+    <input type="number" name="age">
+     <br>
+    <label for="gender">Man or Woman?</label>
+    <input type="radio" name="gender" value="Man">Man
+     <input type="radio" name="gender" value="Woman">Woman
+     <br>
+     <label for="Name">Enter your name:</label>
+    <input type="text" name="name">
+     <br>
+     
+     <input type="submit" name="submit" value="Submit">
+ </form> -->
+
+ <?php
+// if (isset($_GET['age']) && isset($_GET['gender']) && isset($_GET['name'])) {
+
+//     $gender = $_GET['gender'];
+//     $age = $_GET['age'];
+//     $name = $_GET['name'];
+
+//     if ($gender == "Woman" && $age >= 21 && $age <= 40) {
+//         echo "Welcome to the team, $name!";
+//     } else {
+//         echo "Sorry, $name, you don't fit the criteria !";
+//     }
+// }
 ?>
-<form method="get" action="">
-	<label for="age">...</label>
-	<input type="" name="age">
-	<input type="submit" name="submit" value="Greet me now">
-</form>
+<?php
+
+// 7. Achieve the same, without the ELSE.
+// A key aspect of coding conditions is to keep them as simple as possible. 
+// Improve the previous exercise by using only an if statement (without the else), 
+// and a default value that changes only if the condition is true.
+
+// if (isset($_GET['age']) && isset($_GET['gender']) && isset($_GET['name'])) {
+
+//     $gender = $_GET['gender'];
+//     $age = $_GET['age'];
+//     $name = $_GET['name'];
+
+//     $message = "Sorry, you don't fit the criteria.";
+
+//     if ($gender == "Woman" && $age >= 21 && $age <= 40) {
+//         $message = "Welcome to the team, $name!";
+//     }
+
+//     echo $message;
+// }
+?>
+
+<!-- <form method="get" action="">
+     <label for="age">Please type your age :</label>
+    <input type="number" name="age">
+     <br>
+    <label for="gender">Man or Woman?</label>
+    <input type="radio" name="gender" value="Man">Man
+     <input type="radio" name="gender" value="Woman">Woman
+     <br>
+     <label for="Name">Enter your name:</label>
+    <input type="text" name="name">
+     <br>
+     
+     <input type="submit" name="submit" value="Submit">
+ </form> -->
+
+ <!-- 8. "School sucks!" Exercise
+Start a new form that would allow a (nasty) teacher to grade a student.
+
+It would display a different message according to the number annotated :
+
+note below 4 : "This work is really bad. What a dumb kid! "
+note between 5 and 9 : "This is not sufficient. More studying is required."
+note equals 10 : "barely enough!"
+note is 11, 12, 13 or 14 : "Not bad!"
+note is 15, 16, 17 or 18 : "Bravo, bravissimo!"
+note is 19 or 20 : "Too good to be true : confront the cheater!" -->
+
+
+ <!-- <form method="get" action="">
+     <label for="note">Note:</label>
+     <select name="note">
+         <?php for ($i = 1; $i <= 20; $i++) { ?>
+             <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+         <?php } ?>
+     </select>
+     <input type="submit" name="submit" value="Submit">
+ </form> -->
+
+ <?php 
+
+// if (isset($_GET['note'])) {
+
+//     $note = $_GET['note'];
+
+//     if ($note < 4) {
+//         echo "This work is really bad. What a dumb kid!";
+//     } elseif ($note >= 5 && $note <= 9) {
+//         echo "This is not sufficient. More studying is required.";
+//     } elseif ($note == 10) {
+//         echo "Barely enough!";
+//     } elseif ($note >= 11 && $note <= 14) {
+//         echo "Not bad!";
+//     } elseif ($note >= 15 && $note <= 18) {
+//         echo "Bravo, bravissimo!";
+//     } elseif ($note >= 19 && $note <= 20) {
+//         echo "Too good to be true : confront the cheater!";
+//     }
+// }
+
+?>
 
 
 
 
 
-</body>
-</html>
+
+
+ </body>
+ </html>
 
 
 
