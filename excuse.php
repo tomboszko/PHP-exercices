@@ -42,6 +42,11 @@
         
     </form>
 
+    <div id="GeneratedExcuse">
+
+
+    </div>
+
     <style>
         body {
             background-color: #333;
@@ -97,6 +102,53 @@
             text-align: center;
         }
     </style>
+
+<?php
+    // Array of excuses for each reason
+    $excuses = array(
+        "illness" => array(
+            "I'm sorry, but my child is feeling under the weather and won't be able to attend school today.",
+            "Unfortunately, my child has come down with an illness, and it's best for them to stay home.",
+            "Due to a sudden illness, my child won't be able to make it to school today."
+        ),
+        "death of the pet (or a family member)" => array(
+            "My child is going through a difficult time due to the loss of a family pet.",
+            "We've had a family tragedy with the loss of a pet, and my child needs some time to cope.",
+            "There's been a sad incident in our family with the passing of a pet."
+        ),
+        "significant extra-curricular activity" => array(
+            "My child has an important extracurricular event that they can't miss today.",
+            "There's a significant extracurricular activity that my child must attend.",
+            "My child has a special event for their extracurricular activity today."
+        ),
+        "Too dumb" => array(
+            "My child is feeling overwhelmed by the schoolwork, and we need to address this issue.",
+            "We've noticed some difficulties in my child's understanding, and we're taking steps to address it.",
+            "Due to academic struggles, my child needs a break to catch up on their studies."
+        )
+    );
+
+    // Get the form inputs
+    $childName = $_GET['ChildName'];
+    $gender = $_GET['gender'];
+    $teacherName = $_GET['TeacherName'];
+    $date = $_GET['date'];
+    $reason = $_GET['reason'];
+
+    // Select a random apology for the chosen reason
+    $selectedApology = $excuses[$reason][array_rand($excuses[$reason])];
+
+    // Generate the apology letter
+    $apologyLetter = "Dear $teacherName,\n\n";
+    $apologyLetter .= "I am writing to inform you that my $gender, $childName, will not be able to attend school on $date.\n\n";
+    $apologyLetter .= "The reason for their absence is: $reason.\n\n";
+    $apologyLetter .= "Apology: $selectedApology\n\n";
+    $apologyLetter .= "Sincerely,\nParent";
+
+    // Display the apology letter
+    echo "<h2>Generated Excuse</h2>";
+    echo nl2br($apologyLetter);
+    ?>
     
 </body>
 </html>
