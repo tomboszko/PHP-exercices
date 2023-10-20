@@ -104,13 +104,16 @@ echo nl2br($apologyLetter);
             background-color: #333;
             font-family: Arial, Helvetica, sans-serif;
             color: #333;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
         }
 
         form {
             width: 350px;
             margin-top: 2rem;
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 2rem;
+            margin-right: 2rem;
             padding: 20px;
             background-color: #fff;
             border-radius: 5px;
@@ -155,8 +158,12 @@ echo nl2br($apologyLetter);
         }
 
         #GeneratedExcuse {
-
+            width: 350px;
+            margin-top: 2rem;
+            padding: 20px;
             background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #ccc;
         }
     </style>
 
