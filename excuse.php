@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <title>Fake Excuses Notes Generator</title>
 </head>
 <body>
@@ -101,12 +102,21 @@ echo nl2br($apologyLetter);
 
     <style>
         body {
+            width:90%;
+            height: 90%;
+            margin-left: auto;
+            margin-right: auto;
             background-color: #333;
+            background-image: url(assets/excusesbackground.png);
+            background-size: cover;
+            background-repeat: no-repeat;
             font-family: Arial, Helvetica, sans-serif;
             color: #333;
             display: flex;
             justify-content: center;
             flex-direction: row;
+            flex-wrap: wrap;
+            
         }
 
         form {
@@ -160,6 +170,8 @@ echo nl2br($apologyLetter);
         #GeneratedExcuse {
             width: 350px;
             margin-top: 2rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
             padding: 20px;
             background-color: #fff;
             border-radius: 5px;

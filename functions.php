@@ -28,7 +28,7 @@
 //     return date('Y', $timestamp);
 // }
 
-// echo dateFr('2023-10-19') . '<br>';
+// echo dateFr('2023-10-19') . '<br>'; // maybe a little problem
 // echo dateFr('$date') .'<br>';
 
 
