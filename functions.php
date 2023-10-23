@@ -104,6 +104,29 @@
 // echo replaceAEWithAandE("microsphæra") . "<br>";
 // echo replaceAEWithAandE("sphærotheca") . "<br>";
 
+// function feedback($message, $cssClass = 'info') {
+//     $classes = array('info', 'error', 'warning');
+
+    
+//     if (in_array($cssClass, $classes)) {
+        
+//         $escapedMessage = htmlspecialchars($message);
+
+        
+//         return "<div class=\"$cssClass\">" . ucfirst($cssClass) . ": $escapedMessage.</div>";
+//     } else {
+//         return "Invalid CSS class.";
+//     }
+// }
+
+// // Example usage with the default class
+// echo feedback("This is an informational message");
+// echo feedback("This is an error message", "error");
+// echo feedback("This is a warning message", "warning");
+
+
+
+
 
 ?>
 
