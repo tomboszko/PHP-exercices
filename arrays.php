@@ -34,45 +34,123 @@
 // echo '</pre>';
 
 
-$me = array (
-    'age' => '41',
-    'fav movies' => array ('fear and loathing in vegas','la soupe aux choux','the grand budapest hotel'),
-    'like soccer' => 'false',
+// $me = array (
+//     'age' => '41',
+//     'fav movies' => array ('fear and loathing in vegas','la soupe aux choux','the grand budapest hotel'),
+//     'like soccer' => 'false',
+// );
+
+// echo '<pre>';
+// print_r($me);
+// echo '</pre>';
+
+
+// $me['hobbies'] = array ('nature','mushrooms','theatre');
+
+// echo '<pre>';
+// print_r($me);
+// echo '</pre>';
+
+// $mother = array (
+//     'age' => '65',
+//     'fav movies' => array ('chepas','beuh','menfou'),
+//     'like soccer' => 'true',
+// );
+
+// $mother['hobbies'] = array ('sleep','breaklesboules','petervoye');
+
+// echo '<pre>';
+// print_r($mother);
+// echo '</pre>';
+
+// $count = count($mother);
+// echo $count;
+
+
+// $me['hobbies'][]='Taxidermy';
+
+// echo '<pre>';
+// print_r($me);
+// echo '</pre>';
+
+// $soulmate = array (
+//     'age' => '36',
+//     'fav movies' => array ('christmas movie','love, live, etc...','beetlejuice'),
+//     'like soccer' => 'false',
+// );
+
+// echo '<pre>';
+// print_r($soulmate);
+// echo '</pre>';
+
+// $soulmate['hobbies'] = array ('walking','cinema','books');
+
+// echo '<pre>';
+// print_r($soulmate);
+// echo '</pre>';
+
+
+
+// $me = array(
+//     'age' => '41',
+//     'fav movies' => array('fear and loathing in vegas', 'la soupe aux choux', 'the grand budapest hotel'),
+//     'like soccer' => 'false',
+//     'hobbies' => array('nature', 'mushrooms', 'theatre')
+// );
+
+
+// $soulmate = array(
+//     'age' => '36',
+//     'fav movies' => array('christmas movie', 'love, live, etc...', 'beetlejuice'),
+//     'like soccer' => 'false',
+//     'hobbies' => array('walking', 'cinema', 'books','theatre'),
+// );
+
+// // intersection (find commons hobbies)
+// $commonHobbies = array_intersect($me['hobbies'], $soulmate['hobbies']);
+
+// // fusion (find all hobbies of both)
+// $allHobbies = array_merge($me['hobbies'], $soulmate['hobbies']);
+
+// // results
+// echo "Common Hobbies:\n";
+// echo '<pre>';
+// print_r($commonHobbies);
+// echo '</pre>';
+
+// echo "All Hobbies:\n";
+// echo '<pre>';
+// print_r($allHobbies);
+// echo '</pre>';
+
+
+$web_development = array(
+    'frontend' => array(),
+    'backend' => array(),
 );
 
-echo '<pre>';
-print_r($me);
-echo '</pre>';
+$web_development['frontend'][] = 'xhtml';
+$web_development['backend'][] = 'Ruby on Rails';
+$web_development['frontend'][] = 'CSS';
+$web_development['frontend'][] = 'Flash';
+$web_development['frontend'][] = 'Javascript';
 
 
-$me['hobbies'] = array ('nature','mushrooms','theatre');
+  echo '<pre>';
+ print_r($web_development);
+  echo '</pre>';
 
-echo '<pre>';
-print_r($me);
-echo '</pre>';
-
-$mother = array (
-    'age' => '65',
-    'fav movies' => array ('chepas','beuh','menfou'),
-    'like soccer' => 'false',
-);
-
-$mother['hobbies'] = array ('sleep','breaklesboules','petervoye');
+$web_development['frontend'][0] = 'html';
 
 echo '<pre>';
-print_r($mother);
-echo '</pre>';
+ print_r($web_development);
+  echo '</pre>';
 
-$count = count($mother);
-echo $count;
+  unset($web_development['frontend'][2]);
 
-
-$me['hobbies'][]='Taxidermy';
-
-echo '<pre>';
-print_r($me);
-echo '</pre>';
-
+  echo '<pre>';
+  print_r($web_development);
+   echo '</pre>';
 
 ?>
 </body>
