@@ -124,11 +124,36 @@
 // echo feedback("This is an error message", "error");
 // echo feedback("This is a warning message", "warning");
 
+function generateWord($minLength, $maxLength) {
+    $length = rand($minLength, $maxLength);
+    $characters = 'abcdefghijklmnopqrstuvwxyz';
+    $word = '';
+    for ($i = 0; $i < $length; $i++) {
+        $index = rand(0, strlen($characters) - 1);
+        $word .= $characters[$index];
+    }
+    return $word;
+}
 
-
+if (isset($_POST['generate'])) {
+    $word1 = generateWord(1, 5);
+    $word2 = generateWord(7, 15);
+} else {
+    $word1 = '';
+    $word2 = '';
+}
 
 
 ?>
+
+<h1>Generate a new word</h1>
+    <p><?php echo $word1; ?></p>
+    <p><?php echo $word2; ?></p>
+    <form method="post">
+        <button type="submit" name="generate">Generate</button>
+    </form>
+    
+
 
 
 </body>
