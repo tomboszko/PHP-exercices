@@ -89,37 +89,62 @@
 // }
 // echo '</select>';
 
-$countries = array(
-    'BE' => 'Belgium',
-    'IT' => 'Italy',
-    'FR' => 'France',
-    'PK' => 'Pakistan',
-    'IN' => 'India',
-    'CN' => 'China',
-    'JP' => 'Japan',
-    'RU' => 'Russia',
-    'US' => 'USA',
-    'CA' => 'Canada'
-);
+// $countries = array(
+//     'BE' => 'Belgium',
+//     'IT' => 'Italy',
+//     'FR' => 'France',
+//     'PK' => 'Pakistan',
+//     'IN' => 'India',
+//     'CN' => 'China',
+//     'JP' => 'Japan',
+//     'RU' => 'Russia',
+//     'US' => 'USA',
+//     'CA' => 'Canada'
+// );
 
-echo '<select id="country-select">';
-foreach ($countries as $code => $name) {
-    echo '<option value="' . $name . '">' . $name . '</option>';
+// echo '<select id="country-select">';
+// foreach ($countries as $code => $name) {
+//     echo '<option value="' . $name . '">' . $name . '</option>';
+// }
+// echo '</select>';
+
+// echo '<p id="country-code"></p>';
+
+// echo '<script>';
+// echo 'var select = document.getElementById("country-select");';
+// echo 'var code = document.getElementById("country-code");';
+// echo 'select.addEventListener("change", function() {';
+// echo '    code.textContent = Object.keys(' . json_encode($countries) . ')[this.selectedIndex];';
+// echo '});';
+// echo '</script>';
+
+
+
+// $str = 'This is going to be shuffled !';
+// $str = str_shuffle($str);
+ 
+// echo $str;
+
+
+// $text = 'According to a researcher (sic) at Cambridge University, it doesnt matter in what order the letters in a word are, the only important thing is that the first and last letter be at the right place. The rest can be a total mess and you can still read it without problem. This is because the human mind does not read every letter by itself but the word as a whole.';
+
+// $text = str_shuffle($text);
+
+// echo $text;
+
+
+$str= "According to a researcher (sic) at Cambridge University , it doesn't matter in what order the letters in a word are, the only important thing is that the first and last letter be at the right place. The rest can be a total mess and you can still read it without problem. This is because the human mind does not read every letter by itself but the word as a whole .";
+
+$str= explode(" ", $str);
+
+foreach ($str as $word){
+	
+	echo str_shuffle($word)." ";
 }
-echo '</select>';
 
-echo '<p id="country-code"></p>';
 
-echo '<script>';
-echo 'var select = document.getElementById("country-select");';
-echo 'var code = document.getElementById("country-code");';
-echo 'select.addEventListener("change", function() {';
-echo '    code.textContent = Object.keys(' . json_encode($countries) . ')[this.selectedIndex];';
-echo '});';
-echo '</script>';
+
 ?>
-
-
 
 
 
