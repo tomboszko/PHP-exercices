@@ -41,6 +41,13 @@ echo date('Y m d H:i:s', $_SESSION['time']);
 
 // You may want to use SID here, like we did in page1.php
 echo '<br /><a href="page1.php">page 1</a>';
+
+
+
+echo "<pre>";
+print_r($_POST);
+
+
 ?>
 </body>
 </html>
