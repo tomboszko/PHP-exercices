@@ -73,9 +73,50 @@
 // }
 
 
+// $names= array('tim', 'alex', 'pierre', 'antoine','jean','paul','pie','pau','pauline');
 
 
+// foreach ($names as $name)
+// {
+//     echo $name . '<br />';
+// }
 
+// $countries = array('belgium', 'italy', 'france', 'pakistan', 'india', 'china', 'japan', 'russia', 'usa', 'canada');
+
+// echo '<select>';
+// foreach ($countries as $country) {
+//     echo '<option value="' . $country . '">' . ucfirst($country) . '</option>';
+// }
+// echo '</select>';
+
+$countries = array(
+    'BE' => 'Belgium',
+    'IT' => 'Italy',
+    'FR' => 'France',
+    'PK' => 'Pakistan',
+    'IN' => 'India',
+    'CN' => 'China',
+    'JP' => 'Japan',
+    'RU' => 'Russia',
+    'US' => 'USA',
+    'CA' => 'Canada'
+);
+
+echo '<select id="country-select">';
+foreach ($countries as $code => $name) {
+    echo '<option value="' . $name . '">' . $name . '</option>';
+}
+echo '</select>';
+
+echo '<p id="country-code"></p>';
+
+echo '<script>';
+echo 'var select = document.getElementById("country-select");';
+echo 'var code = document.getElementById("country-code");';
+echo 'select.addEventListener("change", function() {';
+echo '    code.textContent = Object.keys(' . json_encode($countries) . ')[this.selectedIndex];';
+echo '});';
+echo '</script>';
 ?>
 
 
