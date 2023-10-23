@@ -11,16 +11,102 @@
 
 <?php
 
-$str= "According to a researcher (sic) at Cambridge University , it doesn't matter in what order the letters in a word are, the only important thing is that the first and last letter be at the right place. The rest can be a total mess and you can still read it without problem. This is because the human mind does not read every letter by itself but the word as a whole .";
+// function capitalize($str) {
+//     return mb_strtoupper(mb_substr($str, 0, 1)) . mb_substr($str, 1);
+// }
 
-$str= explode(" ", $str);
+// $names = array('émile', 'michel', 'jean', 'emmanuel', 'françois');
 
-foreach ($str as $word){
-	
-	echo str_shuffle($word)." ";
-}
+// $capitalizedNames = array_map('capitalize', $names);
+
+// foreach ($capitalizedNames as $name) {
+//     echo $name . '<br>';
+// }
+
+// function dateFr($date) {
+//     $timestamp = strtotime($date);
+//     return date('Y', $timestamp);
+// }
+
+// echo dateFr('2023-10-19') . '<br>';
+// echo dateFr('$date') .'<br>';
+
+
+// function sum($a, $b) {
+//     return $a + $b;
+// }
+
+// echo sum(2, 3) . '<br>';
+// echo sum(5, 5) . '<br>';
+// echo sum(10, 10) . '<br>';
+
+
+// function sumBis($a, $b) {
+
+//     if (!is_numeric($a) || !is_numeric($b)) {
+//         return 'Error: argument is not a number.';
+//     }
+//     return $a + $b;
+// }
+
+
+// $a = 5;
+// $b = 'not a number';
+// $result = sumBis($a, $b);
+// echo $result . '<br>' ; // Output: Error: argument is not a number.
+
+// $a = 5;
+// $b = 10;
+// $result = sumBis($a, $b);
+// echo $result ; // Output: 15
+
+// function acronym($str) {
+//     $words = explode(' ', $str);
+//     $acronym = '';
+//     foreach ($words as $word) {
+//         $acronym .= mb_substr($word, 0, 1);
+//     }
+//     return mb_strtoupper($acronym);
+// }
+
+// echo acronym('read the fucking doc') . '<br>'; 
+
+
+// function replaceAandEWithAE($str) {
+    
+//     $str = str_replace('ae', 'æ', $str);
+
+//     $str = str_replace('Ae', 'Æ', $str);
+
+//     $str = str_replace(['A', 'a'], 'æ', $str);
+
+//     return $str;
+// }
+
+
+// echo replaceAandEWithAE("caecotrophie") . "<br>";
+// echo replaceAandEWithAE("chaenichthys") . "<br>";
+// echo replaceAandEWithAE("microsphaera") . "<br>";
+// echo replaceAandEWithAE("sphaerotheca") . "<br>";
+
+
+// function replaceAEWithAandE($str) {
+    
+//     $str = str_replace('æ', 'ae', $str);
+
+//     $str = str_replace('Æ', 'Ae', $str);
+
+//     return $str;
+// }
+
+// echo replaceAEWithAandE("cæcotrophie") . "<br>";
+// echo replaceAEWithAandE("chænichthys") . "<br>";
+// echo replaceAEWithAandE("microsphæra") . "<br>";
+// echo replaceAEWithAandE("sphærotheca") . "<br>";
+
 
 ?>
+
 
 </body>
 </html>
