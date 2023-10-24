@@ -8,17 +8,28 @@
 <body>
     
 <?php
-$servername = "localhost";
-$username = "toms";
-$password = "root";
-$dbname = "test";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} else {
-    echo "Connected successfully";
+
+function connectToDatabase() {
+    $servername = "localhost";
+    $username = "toms";
+    $password = "root";
+    $dbname = "test";
+    
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    return $conn;
+}
+
+function insertData($conn, $name, $password, $email) {
+    $stmt = $conn->prepare("INSERT INTO newTable (Name, Password, Mail) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $name, $password, $email);
+    return $stmt->execute();
 }
 ?>
 
@@ -41,63 +52,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userPassword = password_hash($_POST['Password'], PASSWORD_DEFAULT);
     $email = $_POST['Mail'];
 
-    $stmt = $conn->prepare("INSERT INTO newTable (Name, Password, Mail) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $user, $userPassword, $email);
-
-    if ($stmt->execute()) {
+    $conn = connectToDatabase();
+    if (insertData($conn, $user, $userPassword, $email)) {
         echo "Data inserted successfully.";
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Error: " . $conn->error;
     }
 
-    $stmt->close();
+    $conn->close();
 }
 ?>
 
-</body>
-</html>
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  width: 250px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-label {
-  margin-bottom: 10px;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-input[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-input[type="submit"]:hover {
-  background-color: #45a049;
-}
-</style>
 
 </body>
 </html>
